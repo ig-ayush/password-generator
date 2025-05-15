@@ -1,11 +1,18 @@
+import { useCallback, useState } from "react";
+
 function Passw(){
+    const [value,setValue] = useState(5);
+    const rangeHandle = useCallback((e)=>{
+        setValue(e.target.value);
+    },[value]);
     return (
+
         <>
-            <div id="container" className="border p-10 rounded-lg bg-orange-500 ">
+            <div id="container" className="border p-8 md:p-10 rounded-lg bg-orange-500 ">
 
                 <div 
                 id="password-gen"
-                className="flex items-center gap-10"
+                className="md:flex flex flex-col  items-center gap-10 mb-5"
                 >
                     <h1 className="text-2xl font-medium">Genarate your password</h1>
                     
@@ -16,11 +23,42 @@ function Passw(){
                         <input 
                         type="text"
                         className="border p-1.5 focus:outline-none"
+                        placeholder="Get your password"
+                        readOnly
                          />
                         <button 
                         className="p-1.5 w-[90px] bg-black font-bold text-white hover:bg-blue-950 duration-150"
                         >Generate</button>
                     </div>
+
+                </div>
+                <div 
+                id="options"
+                className="flex items-center justify-around"
+                >
+                    <div id="rang-con">
+                        <input 
+                        id="length"
+                        type="range"
+                        name="length"
+                        min="7"
+                        max="20"
+                        onChange={rangeHandle}
+                        className="cursor-pointer mr-2"
+                        />    
+                        <span>{value}</span>
+                    </div>
+
+                   <div 
+                    id="number-check"
+                    className="flex gap-2 items-center">
+                     <input 
+                        type="checkbox"
+                        id="numberActive"
+                        className=""
+                    />
+                    <label>number</label>
+                   </div>
                 </div>
             </div>
         </>
