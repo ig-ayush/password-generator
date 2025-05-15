@@ -18,8 +18,8 @@ function Passw(){
                         className="border p-1.5 focus:outline-none"
                          />
                         <button 
-                        className="p-1.5 w-[80px] bg-black font-bold text-white hover:bg-blue-950 duration-150"
-                        >Copy</button>
+                        className="p-1.5 w-[90px] bg-black font-bold text-white hover:bg-blue-950 duration-150"
+                        >Generate</button>
                     </div>
                 </div>
             </div>
