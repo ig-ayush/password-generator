@@ -1,10 +1,36 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function Passw(){
+
     const [value,setValue] = useState(5);
+    const [numberActive,setNumberActive] = useState(false);
+    const [password,setPassword] = useState('');
+    
     const rangeHandle = useCallback((e)=>{
         setValue(e.target.value);
     },[value]);
+
+
+    const numberCheck = () => {
+        setNumberActive(!numberActive);
+    };
+    
+    const passworGenarator = () =>{
+        const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        
+        let newPassoword = '';
+        for(let i = 0; i < value ; i++){
+            console.log(value)
+            let passChar = Math.floor(Math.random() * characters.length);
+            newPassoword += characters[passChar];
+        }
+        setPassword(newPassoword);
+        console.log(password)
+    }
+    
+    useEffect(()=>{
+        passworGenarator();
+    },[])
     return (
 
         <>
@@ -28,6 +54,7 @@ function Passw(){
                          />
                         <button 
                         className="p-1.5 w-[90px] bg-black font-bold text-white hover:bg-blue-950 duration-150"
+                        onClick={passworGenarator}
                         >Generate</button>
                     </div>
 
@@ -56,6 +83,8 @@ function Passw(){
                         type="checkbox"
                         id="numberActive"
                         className=""
+                        checked = {numberActive}
+                        onChange={numberCheck}
                     />
                     <label>number</label>
                    </div>
