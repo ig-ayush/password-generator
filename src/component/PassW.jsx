@@ -5,7 +5,8 @@ function Passw(){
     const [length,setLength] = useState(13);
     const [isNumber,setIsNumber] = useState(false);
     const [password,setPassword] = useState('');
-    const [copyBtn,setCopyBtn] = useState('Copy')
+    const [copyBtn,setCopyBtn] = useState('Copy');
+    
     const getLength = (e) =>{
         setLength(e.target.value);
     }
