@@ -3,16 +3,13 @@ import { useCallback, useEffect, useState } from "react";
 function Passw(){
 
     return (
-
         <>
             <div id="container" className="border p-8 md:p-10 rounded-lg bg-orange-500 ">
-
                 <div 
                 id="password-gen"
                 className="md:flex md:flex-row flex flex-col  items-center gap-10 mb-5"
                 >
                     <h1 className="text-2xl font-medium">Genarate your password</h1>
-                    
                     <div 
                     id="input-con" 
                     className=" flex "
@@ -27,7 +24,6 @@ function Passw(){
                         className="p-1.5 w-[90px] bg-black font-bold text-white hover:bg-blue-950 duration-150"
                         >Generate</button>
                     </div>
-
                 </div>
                 <div 
                 id="options"
@@ -44,7 +40,6 @@ function Passw(){
                         />    
                         <span className="text-lg ml-2">5</span>
                     </div>
-
                    <div 
                     id="number-check"
                     className="flex gap-2 items-center">
