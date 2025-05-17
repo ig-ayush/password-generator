@@ -40,9 +40,9 @@ function Passw(){
                         name="length"
                         min="7"
                         max="20"
-                        className="cursor-pointer mr-2"
+                        className="cursor-pointer mr-2 md:w-[250px]"
                         />    
-                        <span>5</span>
+                        <span className="text-lg ml-2">5</span>
                     </div>
 
                    <div 
@@ -53,7 +53,7 @@ function Passw(){
                         id="numberActive"
                         className=""
                     />
-                    <label>number</label>
+                    <label className="md:text-lg text-sm">number</label>
                    </div>
                 </div>
             </div>
